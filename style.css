@@ -23,8 +23,8 @@ main  {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 250px;
-  margin-right: 250px;
+  margin-left: 230px;
+  margin-right: 230px;
   flex: 1;
 }
 

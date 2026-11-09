@@ -15,7 +15,9 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Rainy Days - Home</title>
+    <script type="module" src="js/index.js"></script>
   </head>
+      
   <body>
     <nav>
       <div class="nav-left">
@@ -26,8 +28,8 @@
       <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <div class="nav-middleleft">
         <ul>
-          <li><a href="index.html" class="nav-link">Jackets</a></li>
-          <li><a href="coming-soon.html" class="nav-link">About</a></li>
+          <li><a href="category/mens-clothing.html" class="nav-link">Men</a></li>
+          <li><a href="category/womens-clothing.html" class="nav-link">Women</a></li>
           <li><a href="./coming-soon.html" class="nav-link">Contact</a></li>
           <li><a href="./coming-soon.html" class="nav-link">Profile</a></li>
         </ul>
@@ -63,53 +65,14 @@
     <header>
       <div>
         <p class="display-heading">New Arrivals</p>
-        <a href="index.html" class="cta-hero">Browse gear</a>
+        <a href="#products" class="cta-hero">Browse gear</a>
       </div>
     </header>
     <main>
-      <section>
-        <h1>Bestsellers</h1>
-        <div class="carousel-container">
-          <article class="product-card">
-            <a href="product/index.html">
-              <img src="images/RainyDays_Jacket7.jpg" alt="Fleece Jacket" />
-              <div class="name-price">
-                <p>Fleece Jacket</p>
-                <p>1299,-</p>
-              </div>
-            </a>
-            <button type="button" class="cta">ADD TO BAG</button>
-          </article>
-          <article class="product-card">
-            <a href="coming-soon.html">
-              <img src="images/RainyDays_Jacket1.jpg" alt="Ekstreme Jacket" />
-              <div class="name-price">
-                <p>Extreme Jacket</p>
-                <p>7599,-</p>
-              </div>
-            </a>
-            <button type="button" class="cta">ADD TO BAG</button>
-          </article>
-          <article class="product-card">
-            <a href="coming-soon.html">
-              <img src="images/RainyDays_Jacket2.jpg" alt="Light Jacket" />
-              <div class="name-price">
-                <p>Light Jacket</p>
-                <p>799,-</p>
-              </div>
-            </a>
-            <button type="button" class="cta">ADD TO BAG</button>
-          </article>
-          <article class="product-card">
-            <a href="coming-soon.html">
-              <img src="images/RainyDays_Jacket3.jpg" alt="Sports Jacket" />
-              <div class="name-price">
-                <p>Sports Jacket</p>
-                <p>1199,-</p>
-              </div>
-            </a>
-            <button type="button" class="cta">ADD TO BAG</button>
-          </article>
+      <section id="products">
+        <h1>Products</h1>
+        <div class="product-grid" id="products-container">
+          <p>Loading products...</p>
         </div>
       </section>
       <section>

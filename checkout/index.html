@@ -15,6 +15,8 @@
     />
     <link rel="stylesheet" href="../style.css" />
     <title>Shopping bag</title>
+    <script type="module" src="../js/main.js"></script>
+
   </head>
   <body>
     <nav>
@@ -26,8 +28,8 @@
       <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <div class="nav-middleleft">
         <ul>
-          <li><a href="../index.html" class="nav-link">Jackets</a></li>
-          <li><a href="../coming-soon.html" class="nav-link">About</a></li>
+          <li><a href="../category/mens-clothing.html" class="nav-link">Men</a></li>
+          <li><a href="../category/womens-clothing.html" class="nav-link">Women</a></li>
           <li><a href="../coming-soon.html" class="nav-link">Contact</a></li>
           <li><a href="../coming-soon.html" class="nav-link">Profile</a></li>
         </ul>
@@ -74,30 +76,16 @@
         <span class="dot"></span>
       </div>
       <div class="cart-content">
-        <article class="summary">
-          <a href="../product/index.html">
-            <img src="../images/RainyDays_Jacket7.jpg" alt="Fleece Jacket" />
-          </a>
-          <div class="summary-content">
-            <h2>Fleece Jacket</h2>
-            <p>Size: M</p>
-            <p>Total: 1299,-</p>
-          </div>
-          <div class="quantity">
-            <button type="button" class="quantity-btn">-</button>
-            <div class="divider"></div>
-            <button type="button" class="quantity-btn">+</button>
-            <span class="quantity-count">1</span>
-          </div>
-        </article>
+        <div id="cart-items" class="summary">
+          <p id="cart-message"> Cart empty</p>
+        </div>
+        
         <div class="total">
-          <p>Fleece jacket</p>
-          <p class="price">Kr 1 299</p>
           <p>Shipping</p>
-          <p class="price">Free</p>
+          <p class="price" id="total-shipping"></p>
           <div class="divider-total"></div>
           <h3>Total</h3>
-          <h3 class="price">Kr 1 299</h3>
+          <h3 class="price" id="total-price"></h3>
         </div>
         <a href="confirmation/index.html" class="cta">PROCEED TO PAYMENT</a>
       </div>

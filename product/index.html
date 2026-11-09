@@ -15,6 +15,7 @@
     />
     <link rel="stylesheet" href="../style.css" />
     <title>Fleece Jacket</title>
+    <script type="module" src="../js/main.js"></script>
   </head>
   <body>
     <nav>
@@ -27,8 +28,8 @@
 
       <div class="nav-middleleft">
         <ul>
-          <li><a href="../index.html" class="nav-link">Jackets</a></li>
-          <li><a href="../coming-soon.html" class="nav-link">About</a></li>
+          <li><a href="../category/mens-clothing.html" class="nav-link">Men</a></li>
+          <li><a href="../category/womens-clothing.html" class="nav-link">Women</a></li>
           <li><a href="../coming-soon.html" class="nav-link">Contact</a></li>
           <li><a href="../coming-soon.html" class="nav-link">Profile</a></li>
         </ul>
@@ -66,35 +67,16 @@
     </nav>
     <main>
       <a href="../index.html" class="back-link">←Back to products</a>
-      <div class="product-container">
-        <img
-          src="../images/RainyDays_Jacket7.jpg"
-          alt="Fleece Jacket"
-          class="product-image"
-        />
+      <div class="product-container" id="product-container">
+        <img alt="" class="product-image" id="product-image" />
         <div class="product-details">
-          <h1>Fleece Jacket</h1>
-          <p>
-            Our most popular product. Loved by explorers. Made with military
-            grade fabrics. With lifetime warranty.
-          </p>
-          <p>100% polyester</p>
-          <p class="price">1299,-</p>
-          <fieldset class="size-options">
-            <div>
-              <input type="radio" id="small" name="size" value="small" />
-              <label for="small">Small</label>
-            </div>
-            <div>
-              <input type="radio" id="medium" name="size" value="medium" />
-              <label for="medium">Medium</label>
-            </div>
-            <div>
-              <input type="radio" id="large" name="size" value="large" />
-              <label for="large">Large</label>
-            </div>
-          </fieldset>
-          <button type="button" class="cta">ADD TO CART</button>
+          <h1 id="product-name"></h1>
+          <p id="product-description"></p>
+          <p id="product-gender"></p>
+          <p class="price" id="product-price"></p>
+
+          <fieldset class="size-options" id="size-options"></fieldset>
+          <button type="button" class="cta" id="cta">ADD TO CART</button>
         </div>
       </div>
     </main>
