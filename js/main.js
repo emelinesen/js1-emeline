@@ -23,7 +23,7 @@ export async function fetchData(url) {
   const json = await response.json();
   return json.data;
 }
-export const productData = await fetchData(apiUrl)
+
 
 export function renderProducts(products) {
   const productContainer = document.getElementById('products-container');
@@ -54,6 +54,13 @@ export function renderProducts(products) {
 
     const price = document.createElement('p');
     price.textContent =  '$ ' + product.discountedPrice.toFixed(2);
+    if (product.onSale === true) {
+      price.classList.add('discounted-price');
+      const saleTag = document.createElement('span');
+      saleTag.textContent = 'SALE';
+      saleTag.classList.add('sale-tag');
+      link.appendChild(saleTag);
+    }
 
     const addToCartButton = document.createElement('button');
     addToCartButton.textContent = 'ADD TO BAG';

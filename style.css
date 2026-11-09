@@ -23,9 +23,13 @@ main  {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 230px;
-  margin-right: 230px;
+  margin-left: 220px;
+  margin-right: 220px;
   flex: 1;
+}
+
+.hidden {
+  display: none;
 }
 
 nav, footer {
@@ -217,13 +221,29 @@ nav ul {
   margin-bottom: 1px;
 }
 
-.name-price {
+.name-price  {
   color: var(--primary-color);
   font-family: var(--font-family-body);
   letter-spacing: -0.04em;
   font-size: 16px;
   display: flex;
   justify-content: space-between;
+  white-space: nowrap;
+}
+
+.discounted-price {
+  color: var(--secondary-color);
+}
+.sale-tag {
+  color: var(--primary-color);
+  font-family: var(--font-family-header);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .product-card p {
