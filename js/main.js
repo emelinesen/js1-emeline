@@ -57,7 +57,7 @@ export function renderProducts(products) {
     if (product.onSale === true) {
       price.classList.add('discounted-price');
       const saleTag = document.createElement('span');
-      saleTag.textContent = 'SALE';
+      saleTag.textContent = 'ON SALE';
       saleTag.classList.add('sale-tag');
       link.appendChild(saleTag);
     }
@@ -81,6 +81,23 @@ export function renderProducts(products) {
 export function formatTitle(title) {
   return title.replace('Rainy Days ', '');
 }
+
+export function showLoader() {
+  const loader = document.getElementById('loader');
+  loader.classList.remove('hidden');
+}
+
+export function hideLoader() {
+  const loader = document.getElementById('loader');
+  loader.classList.add('hidden');
+}
+
+export function showError(message) {
+  const errorMessage = document.getElementById('message');
+  errorMessage.textContent = message;
+  errorMessage.classList.remove('hidden');
+} 
+
 // --- EVENT LISTENERS ---
 // This is where we will add our event listeners, for example, for the
 // search input or pagination buttons.

@@ -28,9 +28,6 @@ main  {
   flex: 1;
 }
 
-.hidden {
-  display: none;
-}
 
 nav, footer {
   background-color: var(--primary-color);
@@ -232,7 +229,7 @@ nav ul {
 }
 
 .discounted-price {
-  color: var(--secondary-color);
+  color: var(--secondary-color); 
 }
 .sale-tag {
   color: var(--primary-color);
@@ -242,8 +239,17 @@ nav ul {
   letter-spacing: -0.04em;
   text-decoration: none;
   margin-top: 5px;
+  margin-left: 5px;
   display: flex;
   justify-content: flex-end;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 14px;
+  font-weight: 300;
+  margin-left: 5px;
 }
 
 .product-card p {
@@ -416,16 +422,16 @@ section h1 {
 /* fleece-jacket */
 
 .size-options {
-  border: none;
   display: flex;
-  flex-direction: column;
   gap: 10px;
-  
-  position: relative;
-  left: -20px;
-  font-size: 18px;
+  margin-top: 30px;
+  border: none;
+  padding: 0;
 }
 
+
+
+¢
 .product-details .price {
   margin-bottom: 90px;
 }
@@ -438,7 +444,7 @@ section h1 {
   flex-direction: row wrap;
   justify-content: space-between;
   gap: 50px;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .product-container img {
@@ -719,6 +725,10 @@ margin-bottom: -50px;
 article.overlay-size .size-options {
   margin-top: 0;
 
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 1200px) {

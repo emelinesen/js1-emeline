@@ -15,7 +15,7 @@
     />
     <link rel="stylesheet" href="../style.css" />
     <title>Fleece Jacket</title>
-    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/product.js"></script>
   </head>
   <body>
     <nav>
@@ -62,20 +62,22 @@
         </label>
       </div>
       <div class="breadcrumbs">
-        <a href="../index.html">Home</a> / Fleece_Jacket /
+        <a href="../index.html">Home</a> / <span id="breadcrumb"></span> /
       </div>
     </nav>
     <main>
       <a href="../index.html" class="back-link">←Back to products</a>
-      <div class="product-container" id="product-container">
+      <p id="loader"></p>
+        <p id="message" class="hidden" role="alert"></p>
+      <div class="product-container hidden" id="product-container">
         <img alt="" class="product-image" id="product-image" />
         <div class="product-details">
           <h1 id="product-name"></h1>
           <p id="product-description"></p>
-          <p id="product-gender"></p>
+          <p class="size-options" id="size-options"></p>
           <p class="price" id="product-price"></p>
 
-          <fieldset class="size-options" id="size-options"></fieldset>
+          
           <button type="button" class="cta" id="cta">ADD TO CART</button>
         </div>
       </div>

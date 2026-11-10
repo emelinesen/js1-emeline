@@ -3,7 +3,13 @@
 // --- STATE ---
 // This is where we will store the application's data, like the list of all games
 // and the current state of pagination and filters.
-import { fetchData, apiUrl, renderProducts } from './main.js';
+import { 
+  fetchData, 
+  apiUrl, 
+  renderProducts, 
+  showError,
+  showLoader, 
+  hideLoader, } from './main.js';
 
 // --- DOM ELEMENTS ---
 // This is where we will select the elements from the HTML that we need to
@@ -15,15 +21,14 @@ const errorMessage = document.getElementById('message');
 // This is where we will write all our functions: for fetching data,
 // rendering games, handling search, pagination, etc
 async function loadProducts() {
-  loader.classList.remove('hidden');
+  showLoader();
   try {
     const products = await fetchData(apiUrl);
     renderProducts(products);
   } catch (error) {
-    errorMessage.textContent = 'Could not fetch products.';
-    errorMessage.classList.remove('hidden');
+    showError('We have a problem with loading the products. Please try again later');
   } finally {
-    loader.classList.add('hidden');
+    hideLoader();
   }
 }
 
