@@ -8,7 +8,11 @@ import {
   showLoader, 
   hideLoader, } from './main.js';
 
+import {
+  addToCart,
+ } from './cart.js';
 
+let currentProduct = null;
 const productId = new URLSearchParams(window.location.search).get('id');
 
 function renderProduct(product) {
@@ -46,11 +50,11 @@ function renderProduct(product) {
   document.getElementById('product-container').classList.remove('hidden');
 }
 
-
 async function loadProduct() {
   showLoader();
   try {
     const product = await fetchData(`${apiUrl}/${productId}`);
+    currentProduct = product;
     renderProduct(product);
   } catch (error) {
     showError('Oops! We have a problem with loading the product.');
@@ -64,3 +68,8 @@ if (!productId) {
 } else {
   loadProduct();
 }
+
+const addToCartButton = document.getElementById('cta');
+addToCartButton.addEventListener('click', (event) => {
+    addToCart(currentProduct);
+    });

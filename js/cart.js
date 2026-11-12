@@ -1,5 +1,29 @@
 'use strict';
 
+const cartKey = 'cart';
+export function saveCart(cart) {
+  localStorage.setItem(cartKey, JSON.stringify(cart));
+}
+
+export function getCart() {
+  const cart = localStorage.getItem(cartKey);
+  let savedCart = [];
+  if (cart) {
+    savedCart = JSON.parse(cart);
+  }
+  return savedCart;
+}
+
+export function addToCart (product) {
+  const cart = getCart();
+  const existingItem = cart.find(item => item.id === product.id);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({ id: product.id, quantity: 1 });
+  }
+  saveCart(cart);
+}
 // --- STATE ---
 // This is where we will store the application's data, like the list of all games
 // and the current state of pagination and filters.

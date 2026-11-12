@@ -64,7 +64,7 @@ export function renderProducts(products) {
 
     const addToCartButton = document.createElement('button');
     addToCartButton.textContent = 'ADD TO BAG';
-    addToCartButton.classList.add('cta');
+    addToCartButton.classList.add('cta', 'add-to-cart-btn');
     addToCartButton.type = 'button';
     addToCartButton.dataset.productId = product.id;
    
