@@ -193,6 +193,13 @@ nav ul {
   color: #FFF;
 }
 
+.product-filter {
+  border: none;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  
+}
 
 .product-card {
   box-shadow: 0px 2px 5px rgb(230, 230, 230);

@@ -13,11 +13,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Special+Gothic:wdth,wght@75..125,400..700&display=swap"
       rel="stylesheet"
     />
-  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Rainy Days - Home</title>
     <script type="module" src="js/index.js"></script>
   </head>
-      
+
   <body>
     <nav>
       <div class="nav-left">
@@ -28,8 +28,12 @@
       <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <div class="nav-middleleft">
         <ul>
-          <li><a href="category/mens-clothing.html" class="nav-link">Men</a></li>
-          <li><a href="category/womens-clothing.html" class="nav-link">Women</a></li>
+          <li>
+            <a href="category/mens-clothing.html" class="nav-link">Men</a>
+          </li>
+          <li>
+            <a href="category/womens-clothing.html" class="nav-link">Women</a>
+          </li>
           <li><a href="./coming-soon.html" class="nav-link">Contact</a></li>
           <li><a href="./coming-soon.html" class="nav-link">Profile</a></li>
         </ul>
@@ -72,11 +76,19 @@
     <main>
       <section id="products">
         <h1>Products</h1>
+        <fieldset id="product-filter" class="product-filter">
+          <input type="radio" id="filter-all" name="gender" value="all" checked>
+          <label for="filter-all">All jackets</label>
+
+          <input type="radio" id="filter-men" name="gender" value="Male">
+          <label for="filter-men">Mens jackets</label>
+
+          <input type="radio" id="filter-women" name="gender" value="Female">
+          <label for="filter-women">Womens jackets</label>
+        </fieldset>
         <p id="loader">Loading products...</p>
         <p id="message" class="hidden" role="alert"></p>
-        <div class="product-grid" id="products-container">
-        </div>
-        
+        <div class="product-grid" id="products-container"></div>
       </section>
       <section>
         <h1>Ultimate Proofing</h1>
@@ -111,8 +123,8 @@
         </a>
       </div>
       <div class="footer-middle">
-        <a href="coming-soon.html">Costumer service</a>
-        <a href="coming-soon.html">About Us</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
         <div class="social-media">
           <a href="https://facebook.com" target="_blank" rel="noopener">
             <img src="images/facebook.png" alt="Facebook Icon" />

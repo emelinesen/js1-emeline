@@ -25,19 +25,29 @@ import {
 const loader = document.getElementById('loader');
 const errorMessage = document.getElementById('message');
 const productsContainer = document.getElementById('products-container');
+const productFilter = document.getElementById('product-filter');
 
 // --- FUNCTIONS ---
 // This is where we will write all our functions: for fetching data,
 // rendering games, handling search, pagination, etc
+function showProducts(selectedGender, pathPrefix = '') {
+  if (selectedGender && selectedGender !== 'all') {
+    const filteredProducts = allProducts.filter((product) => product.gender === selectedGender);
+    renderProducts(filteredProducts, pathPrefix)
+    }else {
+    renderProducts(allProducts, pathPrefix);
+    }
+  }
+
+
 async function loadProducts() {
   showLoader();
   try {
     const products = await fetchData(apiUrl);
     allProducts = products;
-    const pageGender = productsContainer.dataset.gender;
-    if (pageGender) {
-      const filteredProducts = allProducts.filter((product) => product.gender === pageGender);
-      renderProducts(filteredProducts, '../')
+    const selectedGender = productsContainer.dataset.gender;
+    if (selectedGender) {
+      showProducts(selectedGender, '../')
     }else {
     renderProducts(products);
     }
@@ -63,6 +73,14 @@ productsContainer.addEventListener('click', (event) => {
   addToCart(product);
   updateCartCount();
 });
+
+
+if (productFilter) {
+    productFilter.addEventListener( 'change', (event) => {
+    showProducts(event.target.value);
+  } );
+}
+
 // --- INITIAL LOAD ---
 // This is where we will call the initial function to fetch the data
 // and render the page for the first time.

@@ -115,4 +115,4 @@ export function updateCartCount() {
 // --- INITIAL LOAD ---
 // This is where we will call the initial function to fetch the data
 // and render the page for the first time.
-
+updateCartCount();
