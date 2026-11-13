@@ -27,7 +27,7 @@ export async function fetchData(url) {
 }
 
 
-export function renderProducts(products) {
+export function renderProducts(products, pathPrefix = '') {
   const productContainer = document.getElementById('products-container');
   productContainer.innerHTML = '';
 
@@ -41,7 +41,7 @@ export function renderProducts(products) {
     productCard.classList.add('product-card');
 
     const link = document.createElement('a');
-    link.href = `product/index.html?id=${product.id}`;
+    link.href = `${pathPrefix}product/index.html?id=${product.id}`;
    
 
     const image = document.createElement('img');
