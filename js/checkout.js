@@ -1,11 +1,12 @@
 "use strict";
 
-import { formatTitle, updateCartCount } from "./main.js";
+import { formatTitle, showError, updateCartCount } from "./main.js";
 
-import { getCart, getCartTotal, removeFromCart } from "./cart.js";
+import { getCart, getCartTotal, removeFromCart, clearCart, } from "./cart.js";
 
 //DOM ELEMENTS
 const cartItemsContainer = document.getElementById("cart-items");
+const paymentBtn = document.getElementById('proceed-to-payment');
 
 //FUNCTIONS
 function renderCartItems() {
@@ -68,5 +69,21 @@ cartItemsContainer.addEventListener("click", (event) => {
   renderCartItems();
   updateCartCount();
 });
+
+paymentBtn.addEventListener("click", (event) => {
+  if (getCart().length === 0) {
+    showError('Your bag is empty, please fill your shoppingbag');
+    return;
+  }
+  paymentBtn.disabled = true;
+  paymentBtn.textContent = "PLACING ORDER..."
+  setTimeout(() => {
+    clearCart();
+    window.location.href = "confirmation/index.html";
+  },
+  2000);
+});
+
+//INITIAL LOAD
 renderCartItems();
 updateCartCount();

@@ -46,6 +46,10 @@ export function removeFromCart(productId) {
   const updatedCart = cart.filter((item) => item.id !== productId);
   saveCart(updatedCart)
 }
+
+export function clearCart() {
+saveCart([]);
+}
 // --- STATE ---
 // This is where we will store the application's data, like the list of all games
 // and the current state of pagination and filters.
