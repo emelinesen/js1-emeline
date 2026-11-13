@@ -9,7 +9,9 @@ import {
   renderProducts, 
   showError,
   showLoader, 
-  hideLoader, } from './main.js';
+  hideLoader, 
+  updateCartCount,
+} from './main.js';
 import { 
   addToCart,
  } from './cart.js';
@@ -52,10 +54,10 @@ productsContainer.addEventListener('click', (event) => {
   const productId = button.dataset.productId;
   const product = allProducts.find(item => item.id === productId);
   addToCart(product);
-  });
+  updateCartCount();
+});
 // --- INITIAL LOAD ---
 // This is where we will call the initial function to fetch the data
 // and render the page for the first time.
 loadProducts();
-
-
+updateCartCount();

@@ -20,9 +20,31 @@ export function addToCart (product) {
   if (existingItem) {
     existingItem.quantity += 1;
   } else {
-    cart.push({ id: product.id, quantity: 1 });
+    cart.push({ id: product.id, title: product.title, discountedPrice: product.discountedPrice, imageUrl: product.image.url, imageAlt: product.image.alt, quantity: 1 });
   }
   saveCart(cart);
+}
+
+export function getCartCount() {
+  let total = 0;
+  getCart().forEach(item => {
+    total += item.quantity;
+  });
+  return total;
+}
+
+export function getCartTotal() {
+  let cartTotal = 0;
+  getCart().forEach(item => {
+    cartTotal += item.discountedPrice * item.quantity;
+  });
+  return cartTotal;
+}
+
+export function removeFromCart(productId) {
+  const cart = getCart();
+  const updatedCart = cart.filter((item) => item.id !== productId);
+  saveCart(updatedCart)
 }
 // --- STATE ---
 // This is where we will store the application's data, like the list of all games

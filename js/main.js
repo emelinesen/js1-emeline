@@ -5,7 +5,9 @@
 // and the current state of pagination and filters.
 
 export const apiUrl = 'https://v2.api.noroff.dev/rainy-days';
-
+import {
+  getCartCount,
+} from './cart.js';
 
 
 // --- DOM ELEMENTS ---
@@ -97,6 +99,14 @@ export function showError(message) {
   errorMessage.textContent = message;
   errorMessage.classList.remove('hidden');
 } 
+
+export function updateCartCount() {
+  const cartCount = document.getElementById('cart-count');
+  if(!cartCount) {
+    return;
+  }
+  cartCount.textContent = getCartCount();
+}
 
 // --- EVENT LISTENERS ---
 // This is where we will add our event listeners, for example, for the

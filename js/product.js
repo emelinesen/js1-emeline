@@ -6,10 +6,13 @@ import {
   formatTitle,
   showError,
   showLoader, 
-  hideLoader, } from './main.js';
+  hideLoader, 
+  updateCartCount
+} from './main.js';
 
 import {
   addToCart,
+
  } from './cart.js';
 
 let currentProduct = null;
@@ -72,4 +75,8 @@ if (!productId) {
 const addToCartButton = document.getElementById('cta');
 addToCartButton.addEventListener('click', (event) => {
     addToCart(currentProduct);
+    updateCartCount();
     });
+
+
+updateCartCount();
