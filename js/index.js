@@ -17,6 +17,7 @@ import {
  } from './cart.js';
 
  let allProducts = [];
+ 
 
 // --- DOM ELEMENTS ---
 // This is where we will select the elements from the HTML that we need to
@@ -33,7 +34,13 @@ async function loadProducts() {
   try {
     const products = await fetchData(apiUrl);
     allProducts = products;
+    const pageGender = productsContainer.dataset.gender;
+    if (pageGender) {
+      const filteredProducts = allProducts.filter((product) => product.gender === pageGender);
+      renderProducts(filteredProducts, '../')
+    }else {
     renderProducts(products);
+    }
   } catch (error) {
     showError('We have a problem with loading the products. Please try again later');
   } finally {
