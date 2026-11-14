@@ -1,12 +1,13 @@
 "use strict";
 
+// --- IMPORTS ---
 import { formatTitle, showError, updateCartCount } from "./main.js";
 
-import { getCart, getCartTotal, removeFromCart, clearCart, } from "./cart.js";
+import { getCart, getCartTotal, removeFromCart, clearCart } from "./cart.js";
 
 //DOM ELEMENTS
 const cartItemsContainer = document.getElementById("cart-items");
-const paymentBtn = document.getElementById('proceed-to-payment');
+const paymentBtn = document.getElementById("proceed-to-payment");
 
 //FUNCTIONS
 function renderCartItems() {
@@ -72,16 +73,15 @@ cartItemsContainer.addEventListener("click", (event) => {
 
 paymentBtn.addEventListener("click", (event) => {
   if (getCart().length === 0) {
-    showError('Your bag is empty, please fill your shoppingbag');
+    showError("Your bag is empty, please fill your shoppingbag");
     return;
   }
   paymentBtn.disabled = true;
-  paymentBtn.textContent = "PLACING ORDER..."
+  paymentBtn.textContent = "PLACING ORDER...";
   setTimeout(() => {
     clearCart();
     window.location.href = "confirmation/index.html";
-  },
-  2000);
+  }, 2000);
 });
 
 //INITIAL LOAD

@@ -1,6 +1,6 @@
 "use strict";
 
-// --- STATE ---
+// --- IMPORTS ---
 import {
   fetchData,
   apiUrl,
@@ -14,6 +14,7 @@ import {
 } from "./main.js";
 import { addToCart } from "./cart.js";
 
+// --- STATE ---
 let allProducts = [];
 
 // --- DOM ELEMENTS ---
