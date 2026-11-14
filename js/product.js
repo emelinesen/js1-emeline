@@ -7,7 +7,8 @@ import {
   showError,
   showLoader, 
   hideLoader, 
-  updateCartCount
+  updateCartCount,
+  showToast,
 } from './main.js';
 
 import {
@@ -76,6 +77,7 @@ const addToCartButton = document.getElementById('cta');
 addToCartButton.addEventListener('click', (event) => {
     addToCart(currentProduct);
     updateCartCount();
+    showToast(`${formatTitle(currentProduct.title)} added!`);
     });
 
 

@@ -1,22 +1,12 @@
 'use strict';
 
 // --- STATE ---
-// data, like the list of all games
-// and the current state of pagination and filters.
-
 export const apiUrl = 'https://v2.api.noroff.dev/rainy-days';
 import {
   getCartCount,
 } from './cart.js';
 
-
-// --- DOM ELEMENTS ---
-// This is where we will select the elements from the HTML that we need to
-// interact with, like containers and buttons.
-
 // --- FUNCTIONS ---
-// This is where we will write all our functions: for fetching data,
-// rendering games, handling search, pagination, etc.
 export async function fetchData(url) {
   const response = await fetch(url);
   if (!response.ok) {
@@ -25,7 +15,6 @@ export async function fetchData(url) {
   const json = await response.json();
   return json.data;
 }
-
 
 export function renderProducts(products, pathPrefix = '') {
   const productContainer = document.getElementById('products-container');
@@ -108,11 +97,17 @@ export function updateCartCount() {
   cartCount.textContent = getCartCount();
 }
 
-// --- EVENT LISTENERS ---
-// This is where we will add our event listeners, for example, for the
-// search input or pagination buttons.
+export function showToast(text) {
+  const toast = document.createElement('div');
+  toast.classList.add('toast', 'overlay-card');
+  toast.setAttribute('role', 'status');
+  toast.textContent = text;
+  document.body.appendChild(toast);
+  setTimeout(() => {
+    toast.remove();
+
+  }, 3000);
+}
 
 // --- INITIAL LOAD ---
-// This is where we will call the initial function to fetch the data
-// and render the page for the first time.
 updateCartCount();
