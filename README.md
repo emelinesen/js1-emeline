@@ -40,7 +40,7 @@ The wrong jacket was added: find compared product.id with itself. AI pointed out
 
  
 
-The setTimeout syntax was wrong, and showError crashed because #message was missing. AI showed the corrected listener. 
+The setTimeout syntax was wrong, and showError crashed because message was missing. AI showed the correct listener. 
 
  
 
@@ -48,7 +48,7 @@ I asked about CSS animation and other explanations for the toast. But settled on
 
  
 
-Generated the texts with <h2> and <p> for terms.html and privacy.html so it was fast to put it in the HTML files. So that part was all copy/paste AI.  
+Generated the texts with html h2 and html p for terms.html and privacy.html so it was fast to put it in the HTML files. So that part was all copy/paste AI.  
 
  
 
