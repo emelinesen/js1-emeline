@@ -98,13 +98,13 @@ export function updateCartCount() {
 
 export function showToast(text) {
   const toast = document.createElement("div");
-  toast.classList.add("toast", "overlay-card");
+  toast.classList.add("overlay-card");
   toast.setAttribute("role", "status");
   toast.textContent = text;
   document.body.appendChild(toast);
   setTimeout(() => {
     toast.remove();
-  }, 3000);
+  }, 2000);
 }
 
 // --- INITIAL LOAD ---

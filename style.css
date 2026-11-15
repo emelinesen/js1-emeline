@@ -277,14 +277,6 @@ width: 100%;
 margin-bottom: 5px;
 }
 
-.toast {
-  position: fixed;
-  top: 40%;
-  left: 40%;
-  background: #fff;
-  z-index: 1000;   
-}
-
 h1, h2, h3 {
   font-family: var(--font-family-header);
   letter-spacing: var(--letter-spacing-tight);
@@ -743,23 +735,18 @@ margin-bottom: -50px;
 /* Coming Soon */
 
 .overlay-card {
+  position: fixed;
   border: var(--border-primary);
-  padding: 70px;
+  background-color: white;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
   max-width: 600px;
-}
-
-.overlay-buttons {
-  display: flex;
-  gap: 20px;
-}
-
-.overlay-cta {
-  width: 100%;
-  text-align: center;
+  z-index: 100;
+  top: 40%;
+  left: 40%;
+  font-size: 1.5em ;
 }
 
 .overlays {
